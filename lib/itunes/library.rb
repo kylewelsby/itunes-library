@@ -18,11 +18,31 @@ module ITunes
     end
 
     def playlists
-      @playlists ||= self['Playlists'].map { |h| Playlist.new(self, h) }
+      @playlists ||= self['Playlists'].map { |p| Playlist.new(self, p) }
     end
 
     def find_playlist(name)
       playlists.detect { |p| p.name == name }
+    end
+
+    def music
+      find_playlist 'Music'
+    end
+
+    def movies
+      find_playlist 'Movies'
+    end
+
+    def tv_shows
+      find_playlist 'TV Shows'
+    end
+
+    def podcasts
+      find_playlist 'Podcasts'
+    end
+
+    def books
+      find_playlist 'Books'
     end
 
     def track_ids
@@ -34,7 +54,7 @@ module ITunes
     end
 
     def tracks
-      @tracks ||= self['Tracks'].values.map { |properties| Track.new(self, properties) }
+      @tracks ||= self['Tracks'].values.map { |t| Track.new(self, t) }
     end
 
     def size

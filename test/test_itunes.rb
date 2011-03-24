@@ -34,19 +34,19 @@ class TestITunes < Test::Unit::TestCase
   end
 
   def test_playlist_name
-    assert_equal "Movies", library.find_playlist("Movies").name
+    assert_equal "Movies", library.movies.name
   end
 
   def test_playlist_item_ids
-    assert_equal [10981, 11075, 11061, 11068], library.find_playlist("Movies").item_ids
+    assert_equal [10981, 11075, 11061, 11068], library.movies.item_ids
   end
 
   def test_playlist_item_names
-    assert_equal ["Casino Royale", "The Dark Knight", "Iron Man", "Ocean's Eleven"], library.find_playlist("Movies").items.map(&:name)
+    assert_equal ["Casino Royale", "The Dark Knight", "Iron Man", "Ocean's Eleven"], library.movies.items.map(&:name)
   end
 
   def test_playlist_inspect
-    assert_equal "#<ITunes::Playlist name=\"Movies\" size=4>", library.find_playlist("Movies").inspect
+    assert_equal "#<ITunes::Playlist name=\"Movies\" size=4>", library.movies.inspect
   end
 
   def test_track_id
