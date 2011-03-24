@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/josh/itunes-library"
   s.summary     = "Wrapper around iTunes Library.xml"
   s.description = <<-EOS
-    A Ruby wrapper around iTunes Library.xml
+    A Ruby library that makes it easy to dig around your iTunes Library metadata.
   EOS
 
   s.files = [
