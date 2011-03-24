@@ -20,6 +20,7 @@ module ITunes
     def items
       @items ||= item_ids.map { |id| @library.fetch_track(id) }
     end
+    alias_method :tracks, :items
 
     def size
       item_ids.size
